@@ -10,7 +10,7 @@ struct Explore: View {
                 SearchAndFilterBar()
                 
                 LazyVStack (spacing: 22, content: {
-                    ForEach(1...10, id: \.self) { listing in
+                    ForEach(1...5, id: \.self) { listing in
                         NavigationLink(value: listing) {
                             ListingView()
                                 .foregroundStyle(.black)
