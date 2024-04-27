@@ -3,29 +3,38 @@
 import SwiftUI
 
 struct Explore: View {
+    
+    @State private var showDestinationSearchView = false
+    
     var body: some View {
-        NavigationStack {
-            ScrollView {
-                
-                SearchAndFilterBar()
-                
-                LazyVStack (spacing: 22, content: {
-                    ForEach(1...5, id: \.self) { listing in
-                        NavigationLink(value: listing) {
-                            ListingView()
-                                .foregroundStyle(.black)
+            NavigationStack {
+                ScrollView {
+                    
+                    SearchAndFilterBar()
+                        .onTapGesture {
+                            withAnimation(.snappy) {
+                                showDestinationSearchView.toggle()
+                            }
                         }
-                    }
-                })
-            }
-            .padding()
-            .navigationDestination(for: Int.self) { listing in
-                ListingDataView()
-                    .navigationBarBackButtonHidden(true)
+                    
+                    
+                    LazyVStack (spacing: 22, content: {
+                        ForEach(1...10, id: \.self) { listing in
+                            NavigationLink(value: listing) {
+                                ListingView()
+                                    .foregroundStyle(.black)
+                            }
+                        }
+                    })
                 }
+                .padding()
+                .navigationDestination(for: Int.self) { listing in
+                    ListingDataView()
+                        .navigationBarBackButtonHidden(true)
+                }
+            }
         }
     }
-}
 
 #Preview {
     Explore()
