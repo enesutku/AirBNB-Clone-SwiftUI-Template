@@ -193,7 +193,7 @@ struct ListingDataView: View {
                                 .font(.subheadline)
                                 .fontWeight(.semibold)
                                 .frame(width: 140, height: 48)
-                                .background(.pink)
+                                .background(Color("buttonPink"))
                                 .clipShape(.rect(cornerRadius: 8))
                         })
                     }
