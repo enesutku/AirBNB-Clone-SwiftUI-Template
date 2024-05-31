@@ -173,7 +173,7 @@ struct ListingDataView: View {
                     
                     HStack {
                         VStack(alignment: .leading) {
-                          Text("$500")
+                          Text("$350")
                                 .font(.subheadline)
                                 .fontWeight(.semibold)
                          Text("Total Price")
@@ -194,10 +194,10 @@ struct ListingDataView: View {
                                 .fontWeight(.semibold)
                                 .frame(width: 140, height: 48)
                                 .background(Color("buttonPink"))
-                                .clipShape(.rect(cornerRadius: 8))
+                                .clipShape(.rect(cornerRadius: 7))
                         })
                     }
-                    .padding(.horizontal, 32)
+                    .padding(.horizontal, 30)
                     
                 }
                 .background(.white)
